@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61gent.proto\x12\x05\x61gent\"p\n\rClientMessage\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x16\n\x0cuser_message\x18\n \x01(\tH\x00\x12(\n\x0btool_result\x18\x0b \x01(\x0b\x32\x11.agent.ToolResultH\x00\x42\t\n\x07\x63ontent\"\x83\x01\n\rServerMessage\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x0e\n\x04text\x18\n \x01(\tH\x00\x12$\n\ttool_call\x18\x0b \x01(\x0b\x32\x0f.agent.ToolCallH\x00\x12\x1d\n\x05\x65rror\x18\x0c \x01(\x0b\x32\x0c.agent.ErrorH\x00\x42\t\n\x07\x63ontent\"A\n\x08ToolCall\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\t\x12\x11\n\ttool_name\x18\x02 \x01(\t\x12\x11\n\targuments\x18\x03 \x01(\t\"-\n\nToolResult\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\t\x12\x0e\n\x06result\x18\x02 \x01(\t\"&\n\x05\x45rror\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t2F\n\x0c\x41gentService\x12\x36\n\x04\x43hat\x12\x14.agent.ClientMessage\x1a\x14.agent.ServerMessage(\x01\x30\x01\x42\x12\n\x0e\x63om.hmdp.agentP\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61gent.proto\x12\x05\x61gent\"p\n\rClientMessage\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x16\n\x0cuser_message\x18\n \x01(\tH\x00\x12(\n\x0btool_result\x18\x0b \x01(\x0b\x32\x11.agent.ToolResultH\x00\x42\t\n\x07\x63ontent\"\x83\x01\n\rServerMessage\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x0e\n\x04text\x18\n \x01(\tH\x00\x12$\n\ttool_call\x18\x0b \x01(\x0b\x32\x0f.agent.ToolCallH\x00\x12\x1d\n\x05\x65rror\x18\x0c \x01(\x0b\x32\x0c.agent.ErrorH\x00\x42\t\n\x07\x63ontent\"A\n\x08ToolCall\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\t\x12\x11\n\ttool_name\x18\x02 \x01(\t\x12\x11\n\targuments\x18\x03 \x01(\t\"-\n\nToolResult\x12\x0f\n\x07\x63\x61ll_id\x18\x01 \x01(\t\x12\x0e\n\x06result\x18\x02 \x01(\t\"&\n\x05\x45rror\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t2F\n\x0c\x41gentService\x12\x36\n\x04\x43hat\x12\x14.agent.ClientMessage\x1a\x14.agent.ServerMessage(\x01\x30\x01\x42\x14\n\x10\x63om.campus.agentP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'agent_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\016com.hmdp.agentP\001'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\020com.campus.agentP\001'
   _globals['_CLIENTMESSAGE']._serialized_start=22
   _globals['_CLIENTMESSAGE']._serialized_end=134
   _globals['_SERVERMESSAGE']._serialized_start=137

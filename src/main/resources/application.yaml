@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   application:
-    name: hmdp
+    name: campus-ai-platform
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     #com.mysql.jdbc.Driver
@@ -23,10 +23,10 @@ spring:
   jackson:
     default-property-inclusion: non_null # JSON处理时忽略非空字段
 mybatis-plus:
-  type-aliases-package: com.hmdp.entity # 别名扫描包
+  type-aliases-package: com.campus.entity # 别名扫描包
 logging:
   level:
-    com.hmdp: debug
+    com.campus: debug
 
 # Agent RAG 服务配置（HTTP 模式）
 agent:

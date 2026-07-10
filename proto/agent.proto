@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package agent;
 
-option java_package = "com.hmdp.agent";
+option java_package = "com.campus.agent";
 option java_multiple_files = true;
 
 // Agent 智能服务：Java ↔ Python 双向流通信

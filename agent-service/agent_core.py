@@ -105,7 +105,7 @@ class AgentSession:
     如需持久化，配合 session_store.SessionStore 使用。
     """
 
-    SYSTEM_PROMPT = """你是黑马点评（hm-dianping）的智能助手,你可以通过 Tool 执行以下操作：search_shop、query_voucher_of_shop、create_blog。
+    SYSTEM_PROMPT = """你是校园AI服务平台的智能助手,你可以通过 Tool 执行以下操作：search_shop、query_voucher_of_shop、create_blog。
 注意：当你需要回答关于店铺信息、营业时间、位置等知识性问题时，
 请先调用 search_knowledge(question) 获取相关知识，再基于这些信息回答.
 

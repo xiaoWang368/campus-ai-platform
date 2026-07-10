@@ -81,8 +81,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="hm-dianping Agent Service",
-    description="基于 FastAPI + LangChain + gRPC 的 AI Agent 服务，通过 gRPC 双向流与 Spring Boot 通信",
+    title="校园AI服务平台 Agent Service",
+    description="基于 FastAPI + LangChain + gRPC 的校园AI Agent 服务，通过 gRPC 双向流与 Spring Boot 通信",
     version="2.0.0",
     lifespan=lifespan,
 )
@@ -101,7 +101,7 @@ app.add_middleware(
 async def root():
     """服务根路径，返回框架信息"""
     return {
-        "service": "hm-dianping Agent Service",
+        "service": "校园AI服务平台 Agent Service",
         "framework": {
             "http": "FastAPI",
             "ai": "LangChain",
