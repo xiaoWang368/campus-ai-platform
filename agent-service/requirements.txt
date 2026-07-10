@@ -1,0 +1,16 @@
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-community>=0.0.10
+langchain-text-splitters>=0.0.1
+chromadb>=0.4.22
+fastapi>=0.109.0
+uvicorn>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
+pymysql>=1.1.0
+sqlalchemy>=2.0.25
+dashscope>=1.20.0
+redis>=5.0.0
+grpcio>=1.57.0
+grpcio-tools>=1.57.0

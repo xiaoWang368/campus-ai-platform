@@ -1,0 +1,15 @@
+# 环境变量
+.env
+
+# ChromaDB 数据
+chroma_db/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package agent;
+
+option java_package = "com.hmdp.agent";
+option java_multiple_files = true;
+
+// Agent 智能服务：Java ↔ Python 双向流通信
+service AgentService {
+  // 双向流 Chat：Java 发送用户消息 / Tool 执行结果，
+  // Python 返回文本回复 / Tool 调用请求
+  rpc Chat(stream ClientMessage) returns (stream ServerMessage);
+}
+
+// ========== 客户端 → 服务端 ==========
+
+message ClientMessage {
+  string session_id = 1;
+  oneof content {
+    string user_message = 10;        // 用户提问
+    ToolResult tool_result = 11;     // Tool 执行结果回传
+  }
+}
+
+// ========== 服务端 → 客户端 ==========
+
+message ServerMessage {
+  string session_id = 1;
+  oneof content {
+    string text = 10;                // 最终文本回复
+    ToolCall tool_call = 11;         // 请求执行 Tool
+    Error error = 12;                // 错误信息
+  }
+}
+
+// Tool 调用请求（Python → Java）
+message ToolCall {
+  string call_id = 1;                // 调用 ID，用于关联结果
+  string tool_name = 2;              // 工具名：search_shop / query_voucher_of_shop / create_blog
+  string arguments = 3;              // JSON 参数字符串
+}
+
+// Tool 执行结果回传（Java → Python）
+message ToolResult {
+  string call_id = 1;                // 对应 ToolCall.call_id
+  string result = 2;                 // JSON 结果字符串
+}
+
+// 错误信息
+message Error {
+  string code = 1;
+  string message = 2;
+}
