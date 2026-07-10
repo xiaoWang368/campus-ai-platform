@@ -10,7 +10,7 @@ local orderId = ARGV[3]
 local stockkey = 'seckill:stock:'..voucherId
 --订单
 local orderKey = 'seckill:order:'..voucherId
-1
+
 if (tonumber(redis.call('get', stockkey)) <= 0) then
     --库存不存在
     return 1
