@@ -1,6 +1,7 @@
 package com.campus.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -11,10 +12,11 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 虎哥
@@ -80,6 +82,30 @@ public class BlogComments implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
+
+    /**
+     * 用户昵称
+     */
+    @TableField(exist = false)
+    private String nickName;
+
+    /**
+     * 用户头像
+     */
+    @TableField(exist = false)
+    private String icon;
+
+    /**
+     * 是否点赞
+     */
+    @TableField(exist = false)
+    private Boolean isLike;
+
+    /**
+     * 子回复列表
+     */
+    @TableField(exist = false)
+    private List<BlogComments> replyList;
 
 
 }

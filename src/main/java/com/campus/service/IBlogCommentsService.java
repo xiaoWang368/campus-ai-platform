@@ -1,5 +1,6 @@
 package com.campus.service;
 
+import com.campus.dto.Result;
 import com.campus.entity.BlogComments;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBlogCommentsService extends IService<BlogComments> {
 
+    Result addComment(BlogComments blogComments);
+
+    Result queryBlogComments(Long blogId, Integer current);
+
+    Result likeComment(Long id);
+
+    Result deleteComment(Long id);
 }
