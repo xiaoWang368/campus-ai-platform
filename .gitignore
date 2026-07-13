@@ -31,3 +31,16 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Python ###
+.venv/
+__pycache__/
+*.pyc
+chroma_db/
+
+### Logs ###
+*.log
+
+### Env ###
+.env
+agent-service/.env

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>黑马点评</title>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="./css/element.css">
+  <link href="./css/main.css" rel="stylesheet">
+  <link href="./css/msg-list.css" rel="stylesheet">
+
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="header">
+    <div class="header-title">消息</div>
+  </div>
+  <div class="msg-list">
+    <div class="msg-item" v-for="c in conversations" :key="c.id" @click="openChat(c)">
+      <div class="msg-avatar" :style="{ background: c.avatarColor }">
+        <span v-if="c.avatarText">{{ c.avatarText }}</span>
+        <i v-else-if="c.avatarIcon" :class="c.avatarIcon"></i>
+      </div>
+      <div class="msg-info">
+        <div class="msg-top">
+          <div class="msg-name">{{ c.name }}</div>
+          <div class="msg-time">{{ c.time }}</div>
+        </div>
+        <div class="msg-bottom">
+          <div class="msg-preview">{{ c.lastMessage }}</div>
+          <div class="unread-badge" v-if="c.unread > 0">{{ c.unread > 99 ? '99+' : c.unread }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="empty-state" v-if="conversations.length === 0">
+      <i class="el-icon-chat-dot-round"></i>
+      <div>暂无消息</div>
+    </div>
+  </div>
+  <foot-bar :active-btn="3"></foot-bar>
+</div>
+<script src="./js/vue.js"></script>
+<script src="./js/axios.min.js"></script>
+<!-- 引入组件库 -->
+<script src="./js/element.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/footer.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      conversations: [
+        {
+          id: 1,
+          name: '小v',
+          avatarText: 'v',
+          avatarColor: 'linear-gradient(135deg, #667eea, #764ba2)',
+          lastMessage: '你好！我是小v，校园AI智能助手，请问有什么可以帮助你的？',
+          time: '刚刚',
+          unread: 2,
+          link: '/message.html'
+        },
+        {
+          id: 2,
+          name: '系统通知',
+          avatarText: '通',
+          avatarColor: '#909399',
+          lastMessage: '欢迎使用智慧校园AI服务平台！',
+          time: '10:30',
+          unread: 0,
+          link: ''
+        },
+        {
+          id: 3,
+          name: '李老师',
+          avatarText: '李',
+          avatarColor: '#409eff',
+          lastMessage: '下周的课程安排已经发布了，请同学们注意查收。',
+          time: '昨天',
+          unread: 1,
+          link: ''
+        },
+        {
+          id: 4,
+          name: '王同学',
+          avatarText: '王',
+          avatarColor: '#67c23a',
+          lastMessage: '好的，那明天见！',
+          time: '昨天',
+          unread: 0,
+          link: ''
+        }
+      ]
+    },
+    methods: {
+      openChat(c) {
+        if (c.link) {
+          location.href = c.link
+        } else {
+          this.$message.info('功能开发中...')
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>
