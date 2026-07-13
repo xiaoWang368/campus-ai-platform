@@ -12,19 +12,17 @@ Agent 通过 gRPC 调 Java 侧执行业务操作。
 import json
 import logging
 import threading
-import os
 from concurrent import futures
 from typing import Generator, Optional
 
 import grpc
 
 # 项目内模块
-from config import settings
-from agent_core import AgentSession, LOCAL_TOOL_NAMES
+from agent_core import AgentSession
 from rag_engine import RAGEngine
 from session_store import SessionStore
 from agent_pb2 import (
-    ClientMessage, ServerMessage, ToolCall, ToolResult, Error,
+    ClientMessage, ServerMessage, ToolCall, Error,
 )
 import agent_pb2_grpc
 

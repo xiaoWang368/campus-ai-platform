@@ -9,7 +9,6 @@ Agent 核心模块
 """
 import json
 import logging
-from typing import Optional
 
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, ToolMessage

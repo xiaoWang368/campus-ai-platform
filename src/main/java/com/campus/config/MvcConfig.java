@@ -5,7 +5,6 @@ import com.campus.utils.RefreshIntercepter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -27,7 +26,8 @@ public class MvcConfig implements WebMvcConfigurer {
                         "/user/code",
                         "/user/login",
                         "/agent/**",
-                        "/chat.html",
+                        "/blog-comments/**",
+                        "/static/chat.html",
                         "/**/*.html",
                         "/**/*.js",
                         "/**/*.css"

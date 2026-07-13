@@ -23,14 +23,14 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
 
     # ChromaDB
-    chroma_persist_dir: str = "./chroma_db"
+    chroma_persist_dir: str = "../agent-service/chroma_db"
 
     # Server
     host: str = "0.0.0.0"
     port: int = 8000
 
     class Config:
-        env_file = ".env"
+        env_file = "../agent-service/.env"
         env_file_encoding = "utf-8"
 
 

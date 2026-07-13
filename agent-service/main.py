@@ -10,8 +10,6 @@ RAG Agent 微服务，提供智能问答、数据加载、健康检查接口
 import logging
 import os
 from contextlib import asynccontextmanager
-from typing import Optional
-
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -20,7 +18,7 @@ from pydantic import Json
 from config import settings
 from models import AskRequest, AskResponse, HealthResponse, IngestResponse
 from rag_engine import RAGEngine
-from agent_core import AgentSession, LOCAL_TOOL_NAMES
+from agent_core import AgentSession
 from session_store import SessionStore
 
 # 日志配置
